@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#171126">
+  <title>夜市接接樂</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="夜市接接樂首頁"><span class="brand-mark">✦</span> 夜市接接樂</a>
+      <span class="edition">TAIPEI NIGHT MARKET · MINI GAME</span>
+    </header>
+
+    <section class="game-card" aria-label="夜市接接樂遊戲">
+      <div class="intro">
+        <p class="eyebrow">今晚的好運，接得住嗎？</p>
+        <h1>夜市接接樂<span>🥟</span></h1>
+        <p class="subtitle">接住熱呼呼的小籠包，躲開辣椒炸彈！</p>
+      </div>
+
+      <div class="stats" aria-label="遊戲狀態">
+        <div class="stat"><span class="stat-label">得分</span><strong id="score">000</strong></div>
+        <div class="stat timer-stat"><span class="stat-label">剩餘時間</span><strong><span id="time">30</span><small>秒</small></strong></div>
+        <div class="stat"><span class="stat-label">剩餘機會</span><strong id="lives" class="hearts">♥ ♥ ♥</strong></div>
+      </div>
+
+      <div class="stage-wrap">
+        <canvas id="game" width="800" height="460" aria-label="遊戲畫面：移動籃子接小籠包並躲避辣椒"></canvas>
+        <div class="overlay" id="overlay">
+          <div class="overlay-card">
+            <div class="overlay-emoji" id="overlayEmoji">🏮</div>
+            <h2 id="overlayTitle">夜市開張！</h2>
+            <p id="overlayText">30 秒內接越多小籠包越好，<br>碰到辣椒會失去一次機會。</p>
+            <button id="startButton" class="start-button">開始遊戲 <span>→</span></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <span class="hint"><kbd>←</kbd><kbd>→</kbd> 或 <kbd>A</kbd><kbd>D</kbd> 移動</span>
+        <span class="hint touch-hint">手機可直接在遊戲區滑動</span>
+        <button class="sound-toggle" id="soundButton" type="button" aria-pressed="false" aria-label="開啟音效">♫ <span>音效關閉</span></button>
+      </div>
+      <div class="touch-controls" aria-label="觸控移動">
+        <button id="leftButton" aria-label="向左移動">←</button>
+        <span>左右移動小籃子</span>
+        <button id="rightButton" aria-label="向右移動">→</button>
+      </div>
+    </section>
+
+    <footer><span>一籠幸福，接好接滿。</span><span>祝你今晚手氣旺旺 ✨</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
